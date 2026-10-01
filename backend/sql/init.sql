@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS loan_applications (
     last_name TEXT NOT NULL,
     email_address TEXT NOT NULL,
     phone_number TEXT,
-    loan_amount DECIMAL(12, 2) NOT NULL,
-    loan_term INTEGER NOT NULL,
+    -- Loan details are collected after a user signs up.
+    loan_amount DECIMAL(12, 2),
+    loan_term INTEGER,
     loan_purpose TEXT,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     updated_at TIMESTAMPTZ DEFAULT NOW()

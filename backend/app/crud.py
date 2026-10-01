@@ -6,7 +6,7 @@ All operations verify that the user owns the application before proceeding.
 """
 
 from typing import Optional
-from database import get_connection
+from .database import get_connection
 from decimal import Decimal
 
 # =====================================================

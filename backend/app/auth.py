@@ -11,12 +11,13 @@ SECURITY NOTE:
 """
 
 import os
+from pathlib import Path
 import httpx
 from fastapi import APIRouter, HTTPException, Header
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 # =====================================================
 # CONFIGURATION

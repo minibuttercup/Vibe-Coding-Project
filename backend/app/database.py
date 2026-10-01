@@ -1,10 +1,11 @@
 import os
 import re
+from pathlib import Path
 import psycopg2
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+# Load environment variables relative to the backend source, not the process working directory.
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 def get_connection():
     """Get a connection to the Supabase PostgreSQL database."""
@@ -73,7 +74,7 @@ def _split_sql_statements(sql_script):
 def init_database():
     """Initialize the database by running SQL scripts."""
     # Read the SQL file
-    sql_file_path = os.path.join("sql", "init.sql")
+    sql_file_path = Path(__file__).resolve().parents[1] / "sql" / "init.sql"
     with open(sql_file_path, "r") as f:
         sql_script = f.read()
     

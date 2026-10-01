@@ -5,7 +5,9 @@
  * Handles base URL, default headers, and common request patterns.
  */
 
-const API_BASE_URL = 'http://localhost:8000';
+// Vite exposes only environment variables prefixed with VITE_.
+// Use the local FastAPI server when no deployment URL is configured.
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000';
 
 /**
  * Generic fetch wrapper with error handling

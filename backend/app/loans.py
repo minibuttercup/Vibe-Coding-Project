@@ -15,8 +15,8 @@ from typing import Optional
 from fastapi import APIRouter, HTTPException, Header
 from pydantic import BaseModel
 from decimal import Decimal
-import crud
-from auth import get_current_user
+from . import crud
+from .auth import get_current_user
 
 # =====================================================
 # ROUTER

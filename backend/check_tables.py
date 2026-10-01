@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from database import get_connection
+from app.database import get_connection
 
 # Load environment variables
 load_dotenv()
